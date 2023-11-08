@@ -1,0 +1,16 @@
+<nav class="hidden md:flex md:w-auto order-2">
+  <ul class="flex flex-row p-2 px-16 text-sm justify-around gap-16 border-orange-500 font-medium rounded-full border">
+    {{ range site.Menus.main }}
+    <a href="{{if .Pre}}{{site.BaseURL | relLangURL}}{{.Pre}}{{ .URL }}{{else}}{{.URL | relLangURL}}{{end}}" aria-current="page">
+      <li
+        class="inline-flex gap-4 dark:text-white uppercase hover:tracking-widest hover:-mx-2 font-light hover:font-normal ease-in-out duration-1000 border-b border-gray-200 dark:border-gray-800">
+        <p>//</p>
+        <p
+          class="border-b hover:text-orange-500 dark:hover:text-orange-500 {{ if eq .URL $.RelPermalink }} border-b-black dark:border-b-white hover:border-orange-500 dark:hover:border-orange-500 {{ else }} border-b-white dark:border-b-black {{ end }}">
+          {{ .Name }}
+        </p>
+      </li>
+    </a>
+    {{ end }}
+  </ul>
+</nav>

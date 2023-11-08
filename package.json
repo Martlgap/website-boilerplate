@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "build-tw": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
+    "copy-flowbite": "cp -r ./node_modules/flowbite/dist/flowbite.js ./assets/js",
+    "copy-wowjs": "cp -r ./node_modules/wow.js/dist/wow.js ./assets/js",
+    "copy-wowjscss": "cp -r ./node_modules/wow.js/css/libs/animate.css ./assets/css"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "flowbite": "^1.7.0",
+    "wow.js": "^1.2.2"
+  }
+}

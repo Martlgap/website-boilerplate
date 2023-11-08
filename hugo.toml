@@ -1,0 +1,16 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'My Portfolio Website'
+disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+
+# Navbar Menus
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "About Me"
+url = "/about"
+weight = 2

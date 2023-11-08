@@ -1,0 +1,25 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Title -->
+  <title>{{ .Title }}</title>
+
+  <!-- Load CSS Files -->
+
+  <!-- This is the css generated from tailwindcss -->
+  {{ $styleCSS:= resources.Get "css/style.css" | resources.Minify | resources.Fingerprint }}
+
+  <link rel="stylesheet" type="text/css" href="{{ $styleCSS.RelPermalink }}" integrity=" {{ $styleCSS.Data.Integrity }}" />
+
+  <!-- This is used for your own custom css definitions -->
+  {{ $customCSS:= resources.Get "css/custom.css" | resources.Minify | resources.Fingerprint }}
+
+  <link rel="stylesheet" type="text/css" href="{{ $customCSS.RelPermalink }}" integrity=" {{ $customCSS.Data.Integrity }}" />
+
+  <!-- This is used for the wow.js animation -->
+  {{ $animateCSS:= resources.Get "css/animate.css" | resources.Minify | resources.Fingerprint }}
+
+  <link rel="stylesheet" type="text/css" href="{{ $animateCSS.RelPermalink }}" integrity=" {{ $animateCSS.Data.Integrity }}" />
+
+</head>
